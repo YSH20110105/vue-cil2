@@ -1,0 +1,55 @@
+cd ...
+安装vue-clil
+cnpm install -g vue-cli
+使用vue-cil初始化项目
+vue init webpack-simple mydemo
+进到项目
+cd mydemo
+安装依赖
+npm install
+开始运行
+npm run dev
+
+npm install sass-loader node-sass --save-dev
+
+
+
+<--
+extract-text-webpack-plugin
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
+extractCSS: true
+生成单独的css时，可能会报错chunk.sortModules is not a function
+，解决方案是回退extract-text-webpack-plugin版本号到2.1.2，npm i extract-text-webpack-plugin@2.1.2
+。一般的压缩js插件无法压缩es6，如果想对es6代码进行压缩，可以使用UglifyjsWebpackPlugin。但是如果教程一步一步来还是会报错Unexpected token: name (doc)
+。解决方案是将babel配置拿出来，不要放在webpack.config中，单独的放到.babelrc中。使用了extract-text-webpack-plugin
+后无法进行css压缩？可以使用optimize-css-assets-webpack-plugin这一插件来解决。
+-->
+
+使用 eslint-loader,这样你的 .vue 文件会在开发期间每次保存时自动检验。
+npm install eslint eslint-loader --save-dev
+
+
+http://blog.csdn.net/qq_25218903/article/details/52747141
+
+cd karma
+npm install karma --save-dev
+npm install karma-jasmine karma-chrome-launcher --save-dev
+
+开启Karma
+karma start
+
+Karma+Jasmine配置：
+执行命令init命令进行配置：
+karma init
+
+npm install jasmine-core --save-dev
+
+启动Karma
+karma start karma.conf.js
+
+如果你还想查看测试的代码覆盖率，我们可以安装karma-coverage插件
+npm install karma-coverage
+
+在reporters中增加coverage
+preprocessors中指定js文件
+添加coverageReporter节点，将覆盖率报告类型type设置为html，输入目录dir指定到你希望的目录中
